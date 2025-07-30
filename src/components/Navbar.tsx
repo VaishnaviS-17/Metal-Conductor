@@ -36,7 +36,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-2">
             <div className="relative">
               <img 
-                src="/lovable-uploads/3bea0fa6-a980-48c2-8bd4-48ea35b9a994.png" 
+                src="/uploads/3bea0fa6-a980-48c2-8bd4-48ea35b9a994.png" 
                 alt="Detector House Logo" 
                 className="h-10 lg:h-12 w-auto"
               />

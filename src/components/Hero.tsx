@@ -4,6 +4,8 @@ import { Shield, Star, Users, Award } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import heroImage from '@/assets/hero-detector.jpg';
+import TextType from '@/components/ui/text-type';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,8 +89,15 @@ export const Hero = () => {
                 ref={titleRef}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
-                Your Shield Against{' '}
-                <span className="text-primary">Uncertainty</span>
+                <TextType 
+                  text={["Your Shield Against Uncertainty", "Precision Detection Systems", "Ultimate Peace of Mind"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  as="span"
+                  className="text-primary"
+                />
               </h1>
               <p 
                 ref={subtitleRef}
