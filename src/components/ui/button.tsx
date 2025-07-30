@@ -5,24 +5,28 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        default: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-medium hover:shadow-strong hover:scale-105",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-medium",
+        outline: "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground hover:border-primary",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary-hover shadow-soft hover:shadow-medium",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Ecommerce specific variants
+        cta: "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary-hover hover:to-primary shadow-glow hover:shadow-strong transform hover:scale-105 font-bold",
+        shop: "bg-secondary text-secondary-foreground hover:bg-secondary-hover border border-secondary-hover shadow-medium hover:shadow-strong hover:scale-105",
+        cart: "bg-accent text-accent-foreground hover:bg-primary shadow-soft hover:shadow-medium hover:scale-105",
+        buy: "bg-gradient-to-r from-secondary to-secondary-hover text-secondary-foreground hover:from-secondary-hover hover:to-secondary shadow-strong hover:shadow-glow font-bold text-base",
+        trust: "bg-background border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-soft hover:shadow-glow"
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-11 px-6 py-3",
+        sm: "h-9 rounded-md px-4 text-sm",
+        lg: "h-13 rounded-lg px-8 py-4 text-base",
+        xl: "h-16 rounded-xl px-12 py-5 text-lg font-bold",
         icon: "h-10 w-10",
       },
     },
