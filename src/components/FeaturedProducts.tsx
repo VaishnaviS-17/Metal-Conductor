@@ -109,67 +109,51 @@ export const FeaturedProducts = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
-            <Card key={product.id} className="group hover-lift border-0 shadow-soft hover:shadow-strong bg-card overflow-hidden">
-              <div className="relative">
+            <Card key={product.id} className="group bg-white border border-border hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div className="relative bg-gray-50">
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-72 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-3 left-3">
+                  <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-medium">
                     {product.badge}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button variant="ghost" size="icon" className="bg-white/90 hover:bg-white">
-                    <Eye className="w-4 h-4" />
-                  </Button>
-                </div>
               </div>
               
-              <CardContent className="p-6">
-                <div className="mb-3">
+              <CardContent className="p-4 space-y-3">
+                <div>
+                  <h3 className="font-medium text-base text-foreground mb-2 line-clamp-2 leading-snug">
+                    {product.name}
+                  </h3>
+                  
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
                           className={cn(
-                            "w-4 h-4",
+                            "w-3 h-3",
                             i < Math.floor(product.rating) 
                               ? "text-primary fill-primary" 
-                              : "text-muted-foreground"
+                              : "text-gray-300"
                           )} 
                         />
                       ))}
                     </div>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-xs text-muted-foreground">
                       ({product.reviews})
                     </span>
                   </div>
-                  
-                  <h3 className="font-semibold text-lg text-foreground mb-2 line-clamp-2">
-                    {product.name}
-                  </h3>
-                  
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {product.features.map((feature, index) => (
-                      <span 
-                        key={index}
-                        className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-foreground">
+                <div className="space-y-3">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-xl font-bold text-foreground">
                       ${product.price}
                     </span>
                     {product.originalPrice && (
@@ -178,20 +162,10 @@ export const FeaturedProducts = () => {
                       </span>
                     )}
                   </div>
-                  {product.originalPrice && (
-                    <span className="bg-destructive text-destructive-foreground px-2 py-1 rounded text-sm font-semibold">
-                      Save ${product.originalPrice - product.price}
-                    </span>
-                  )}
-                </div>
 
-                <div className="flex gap-2">
-                  <Button variant="cart" className="flex-1">
+                  <Button variant="cart" className="w-full h-9 text-sm">
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     Add to Cart
-                  </Button>
-                  <Button variant="buy" size="sm">
-                    Buy Now
                   </Button>
                 </div>
               </CardContent>
