@@ -99,7 +99,7 @@ export const Categories = () => {
   }, []);
 
   return (
-    <section id="categories" ref={sectionRef} className="py-20 trust-gradient">
+    <section id="categories" ref={sectionRef} className="py-20 bg-rich-brown">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -126,7 +126,13 @@ export const Categories = () => {
                     alt={category.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-80 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${
+                    index === 0 ? 'from-deep-orange to-teal' :
+                    index === 1 ? 'from-secondary to-secondary-hover' :
+                    index === 2 ? 'from-primary to-accent' :
+                    index === 3 ? 'from-teal to-deep-orange' :
+                    'from-primary to-secondary'
+                  } opacity-80 group-hover:opacity-70 transition-opacity duration-300`}></div>
                   
                   <div className="absolute top-4 left-4">
                     <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
@@ -158,7 +164,7 @@ export const Categories = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="shop" size="lg">
+          <Button variant="accent" size="lg">
             Browse All Categories
           </Button>
         </div>

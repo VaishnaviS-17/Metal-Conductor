@@ -2,40 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Detector House Design System - Professional Security & Trust Theme */
+/* Detector House Design System - Rich Professional Security & Trust Theme */
 
 @layer base {
   :root {
-    /* Base colors inspired by the shield logo */
-    --background: 0 0% 99%;
-    --foreground: 30 15% 15%;
+    /* Base colors with rich, professional background */
+    --background: 30 25% 8%; /* Deep rich brown background */
+    --foreground: 45 80% 95%; /* Light text for contrast */
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 15% 15%;
+    --card: 30 20% 12%; /* Slightly lighter cards */
+    --card-foreground: 45 80% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 15% 15%;
+    --popover: 30 20% 12%;
+    --popover-foreground: 45 80% 95%;
 
-    /* Primary: Golden Yellow (from logo) */
-    --primary: 45 95% 60%;
+    /* Primary: Enhanced Golden Yellow (from logo) */
+    --primary: 45 95% 60%; /* Bright gold */
     --primary-foreground: 30 25% 15%;
     --primary-hover: 45 90% 55%;
 
-    /* Secondary: Professional Brown (from logo) */
-    --secondary: 30 25% 35%;
+    /* Secondary: Rich Professional Brown (from logo) */
+    --secondary: 30 25% 35%; /* Deep brown */
     --secondary-foreground: 0 0% 98%;
     --secondary-hover: 30 30% 40%;
 
-    /* Accent: Warm Gold */
-    --accent: 45 80% 65%;
-    --accent-foreground: 30 25% 15%;
+    /* Accent: Deep Orange for vibrancy */
+    --accent: 25 95% 55%; /* Rich orange */
+    --accent-foreground: 0 0% 98%;
+
+    /* New Enhanced Colors */
+    /* Rich Dark Brown for sections */
+    --rich-brown: 30 30% 15%;
+    --rich-brown-foreground: 45 80% 95%;
+
+    /* Deep Orange for highlights */
+    --deep-orange: 25 95% 55%;
+    --deep-orange-foreground: 0 0% 98%;
+
+    /* Slate Gray for modern contrast */
+    --slate-gray: 220 15% 35%;
+    --slate-gray-foreground: 0 0% 98%;
+
+    /* Teal for fresh accents */
+    --teal: 180 60% 45%;
+    --teal-foreground: 0 0% 98%;
 
     /* Trust & Security themed grays */
-    --muted: 210 15% 96%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 30 20% 20%; /* Dark muted */
+    --muted-foreground: 45 60% 80%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 95%;
+    --border: 30 25% 25%; /* Dark border */
+    --input: 30 20% 20%;
     --ring: 45 95% 60%;
 
     /* Destructive remains standard */
@@ -45,29 +62,31 @@
     /* Enhanced radius for modern feel */
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --shield-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --trust-gradient: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    /* Custom design tokens with rich palette */
+    --shield-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--deep-orange)));
+    --trust-gradient: linear-gradient(180deg, hsl(var(--background)), hsl(var(--rich-brown)));
     --hero-gradient: linear-gradient(135deg, hsl(var(--secondary)), hsl(30 35% 25%));
+    --accent-gradient: linear-gradient(135deg, hsl(var(--deep-orange)), hsl(var(--teal)));
+    --card-gradient: linear-gradient(145deg, hsl(var(--card)), hsl(var(--rich-brown)));
     
     /* Professional shadows */
-    --shadow-soft: 0 2px 8px hsl(30 15% 15% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(30 15% 15% / 0.12);
-    --shadow-strong: 0 8px 32px hsl(30 15% 15% / 0.16);
-    --shadow-glow: 0 0 24px hsl(var(--primary) / 0.25);
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 24px hsl(var(--primary) / 0.3);
 
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     /* Sidebar (if needed) */
-    --sidebar-background: 30 10% 96%;
-    --sidebar-foreground: 30 15% 25%;
+    --sidebar-background: 30 20% 12%;
+    --sidebar-foreground: 45 80% 95%;
     --sidebar-primary: 30 25% 35%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 30 10% 92%;
-    --sidebar-accent-foreground: 30 15% 25%;
-    --sidebar-border: 30 15% 88%;
+    --sidebar-accent: 30 20% 18%;
+    --sidebar-accent-foreground: 45 80% 95%;
+    --sidebar-border: 30 25% 25%;
     --sidebar-ring: 45 95% 60%;
   }
 
@@ -90,8 +109,21 @@
     --secondary-foreground: 45 80% 95%;
     --secondary-hover: 30 25% 25%;
 
-    --accent: 45 80% 65%;
-    --accent-foreground: 30 25% 15%;
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Dark mode enhanced colors */
+    --rich-brown: 30 25% 12%;
+    --rich-brown-foreground: 45 80% 95%;
+
+    --deep-orange: 25 95% 55%;
+    --deep-orange-foreground: 0 0% 98%;
+
+    --slate-gray: 220 15% 25%;
+    --slate-gray-foreground: 0 0% 98%;
+
+    --teal: 180 60% 45%;
+    --teal-foreground: 0 0% 98%;
 
     --muted: 30 10% 15%;
     --muted-foreground: 30 8% 65%;
@@ -104,9 +136,10 @@
     --destructive-foreground: 0 0% 98%;
 
     /* Dark mode gradients */
-    --shield-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --shield-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--deep-orange)));
     --trust-gradient: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     --hero-gradient: linear-gradient(135deg, hsl(30 20% 12%), hsl(30 15% 8%));
+    --accent-gradient: linear-gradient(135deg, hsl(var(--deep-orange)), hsl(var(--teal)));
 
     /* Dark mode shadows */
     --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
@@ -171,6 +204,62 @@
 
   .hero-gradient {
     background: var(--hero-gradient);
+  }
+
+  .accent-gradient {
+    background: var(--accent-gradient);
+  }
+
+  .card-gradient {
+    background: var(--card-gradient);
+  }
+
+  /* New color utility classes */
+  .bg-rich-brown {
+    background-color: hsl(var(--rich-brown));
+  }
+
+  .text-rich-brown {
+    color: hsl(var(--rich-brown-foreground));
+  }
+
+  .bg-deep-orange {
+    background-color: hsl(var(--deep-orange));
+  }
+
+  .text-deep-orange {
+    color: hsl(var(--deep-orange-foreground));
+  }
+
+  .bg-slate-gray {
+    background-color: hsl(var(--slate-gray));
+  }
+
+  .text-slate-gray {
+    color: hsl(var(--slate-gray-foreground));
+  }
+
+  .bg-teal {
+    background-color: hsl(var(--teal));
+  }
+
+  .text-teal {
+    color: hsl(var(--teal-foreground));
+  }
+
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Smooth scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
   }
 }
 

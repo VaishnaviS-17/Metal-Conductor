@@ -20,7 +20,12 @@ const buttonVariants = cva(
         shop: "bg-secondary text-secondary-foreground hover:bg-secondary-hover border border-secondary-hover shadow-medium hover:shadow-strong hover:scale-105",
         cart: "bg-accent text-accent-foreground hover:bg-primary shadow-soft hover:shadow-medium hover:scale-105",
         buy: "bg-gradient-to-r from-secondary to-secondary-hover text-secondary-foreground hover:from-secondary-hover hover:to-secondary shadow-strong hover:shadow-glow font-bold text-base",
-        trust: "bg-background border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-soft hover:shadow-glow"
+        trust: "bg-background border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-soft hover:shadow-glow",
+        // New enhanced variants
+        orange: "bg-deep-orange text-deep-orange-foreground hover:bg-deep-orange/90 shadow-medium hover:shadow-strong hover:scale-105",
+        teal: "bg-teal text-teal-foreground hover:bg-teal/90 shadow-medium hover:shadow-strong hover:scale-105",
+        rich: "bg-rich-brown text-rich-brown-foreground hover:bg-rich-brown/90 shadow-soft hover:shadow-medium",
+        accent: "bg-gradient-to-r from-deep-orange to-teal text-white hover:from-deep-orange/90 hover:to-teal/90 shadow-glow hover:shadow-strong transform hover:scale-105 font-bold"
       },
       size: {
         default: "h-11 px-6 py-3",

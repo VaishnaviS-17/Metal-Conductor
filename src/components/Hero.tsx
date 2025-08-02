@@ -76,8 +76,8 @@ export const Hero = () => {
   return (
     <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden hero-gradient">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -87,7 +87,7 @@ export const Hero = () => {
             <div className="space-y-6">
               <h1 
                 ref={titleRef}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
               >
                 <TextType 
                   text={["Your Shield Against Uncertainty", "Precision Detection Systems", "Ultimate Peace of Mind"]}
@@ -101,14 +101,14 @@ export const Hero = () => {
               </h1>
               <p 
                 ref={subtitleRef}
-                className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto lg:mx-0"
+                className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0"
               >
                 Professional metal detectors, security scanners, and detection equipment for ultimate peace of mind.
               </p>
             </div>
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="cta" size="xl" className="group">
+              <Button variant="accent" size="xl" className="group">
                 <Shield className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                 Shop Now
               </Button>
@@ -121,31 +121,31 @@ export const Hero = () => {
             <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <Shield className="w-8 h-8 text-primary" />
+                  <Shield className="w-8 h-8 text-deep-orange" />
                 </div>
-                <div className="text-2xl font-bold text-white">15+</div>
-                <div className="text-sm text-white/80">Years Experience</div>
+                <div className="text-2xl font-bold text-foreground">15+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <Users className="w-8 h-8 text-primary" />
+                  <Users className="w-8 h-8 text-teal" />
                 </div>
-                <div className="text-2xl font-bold text-white">10K+</div>
-                <div className="text-sm text-white/80">Happy Customers</div>
+                <div className="text-2xl font-bold text-foreground">10K+</div>
+                <div className="text-sm text-muted-foreground">Happy Customers</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
                   <Star className="w-8 h-8 text-primary" />
                 </div>
-                <div className="text-2xl font-bold text-white">4.9/5</div>
-                <div className="text-sm text-white/80">Customer Rating</div>
+                <div className="text-2xl font-bold text-foreground">4.9/5</div>
+                <div className="text-sm text-muted-foreground">Customer Rating</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <Award className="w-8 h-8 text-primary" />
+                  <Award className="w-8 h-8 text-deep-orange" />
                 </div>
-                <div className="text-2xl font-bold text-white">100%</div>
-                <div className="text-sm text-white/80">Quality Assured</div>
+                <div className="text-2xl font-bold text-foreground">100%</div>
+                <div className="text-sm text-muted-foreground">Quality Assured</div>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@ export const Hero = () => {
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-glow animate-float">
+            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-deep-orange to-teal text-white px-6 py-3 rounded-full shadow-glow animate-float">
               <div className="text-center">
                 <div className="font-bold text-lg">Trusted</div>
                 <div className="text-sm opacity-90">Since 2008</div>
