@@ -12,28 +12,36 @@ export const Footer = () => {
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/3bea0fa6-a980-48c2-8bd4-48ea35b9a994.png" 
-                alt="Detector House Logo" 
-                className="h-10 w-auto"
-              />
+            <div className="flex items-center space-x-4">
+              <div className="relative">
+                <img 
+                  src="/uploads/image.png" 
+                  alt="Detector House Logo" 
+                  className="h-16 lg:h-20 w-auto"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-xl lg:text-2xl font-bold text-secondary-foreground">DETECTOR HOUSE</h1>
+              </div>
             </div>
             <p className="text-secondary-foreground/80 leading-relaxed">
               Your trusted shield against uncertainty. Professional metal detection equipment for security and peace of mind.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10">
-                <Facebook className="w-5 h-5" />
+              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10" asChild>
+                <a href="https://www.facebook.com/detectorhouse" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10">
-                <Twitter className="w-5 h-5" />
+              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10" asChild>
+                <a href="https://www.instagram.com/detectorhouse" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10">
-                <Instagram className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10">
-                <Linkedin className="w-5 h-5" />
+              <Button variant="ghost" size="icon" className="text-secondary-foreground/60 hover:text-primary hover:bg-primary/10" asChild>
+                <a href="https://www.linkedin.com/company/detector-house/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -68,16 +76,17 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-secondary-foreground/80">+91 9833137158</span>
+                <span className="text-secondary-foreground/80">+91 98331 37158 / +91 87796 45332</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-secondary-foreground/80">info@detectorhouse.com</span>
+                <span className="text-secondary-foreground/80">trucedetectorhouse@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1" />
-                <span className="text-secondary-foreground/80">Mumbai, Maharashtra, India</span>
+                <span className="text-secondary-foreground/80">Charkop, Kandivali West, Mumbai, Maharashtra, India</span>
               </div>
+              
             </div>
 
             {/* Newsletter */}

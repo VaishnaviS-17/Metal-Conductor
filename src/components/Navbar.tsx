@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ShoppingCart, Search, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,10 @@ export const Navbar = () => {
 
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
+    { href: '/', label: 'Home' },
     { href: '#products', label: 'Products' },
     { href: '#categories', label: 'Categories' },
-    { href: '#about', label: 'About Us' },
+    { href: '/about', label: 'About Us' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -50,13 +52,20 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-lg text-foreground hover:text-primary transition-colors duration-200 font-semibold"
+                to={link.href}
+                className={cn(
+                  "text-lg transition-colors duration-200 font-semibold",
+                  link.href.startsWith('#') 
+                    ? "text-foreground hover:text-primary" 
+                    : location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                )}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -73,9 +82,7 @@ export const Navbar = () => {
               </span>
             </Button>
 
-            <Button variant="cta" size="lg" className="hidden sm:flex text-base font-semibold px-6 py-3">
-              Shop Now
-            </Button>
+
 
             {/* Mobile Menu Button */}
             <Button
@@ -98,20 +105,23 @@ export const Navbar = () => {
           <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border shadow-strong">
             <div className="px-4 py-8 space-y-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  className="block text-lg text-foreground hover:text-primary transition-colors duration-200 font-semibold py-3"
+                  to={link.href}
+                  className={cn(
+                    "block text-lg transition-colors duration-200 font-semibold py-3",
+                    link.href.startsWith('#') 
+                      ? "text-foreground hover:text-primary" 
+                      : location.pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <div className="pt-6 border-t border-border">
-                <Button variant="cta" className="w-full text-lg font-semibold py-4">
-                  Shop Now
-                </Button>
-              </div>
+
             </div>
           </div>
         )}

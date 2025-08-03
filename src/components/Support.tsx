@@ -135,12 +135,16 @@ export const Support = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">+91 9833137158 / 8779645332</span>
+                  <span className="text-foreground font-medium">+91 98331 37158 / +91 87796 45332</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">truedetectorhouse@gmail.com</span>
+                  <span className="text-foreground font-medium">trucedetectorhouse@gmail.com</span>
                 </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-foreground font-medium">📍 Charkop, Kandivali West, Mumbai, Maharashtra, India</span>
+                </div>
+                
               </div>
             </div>
             
