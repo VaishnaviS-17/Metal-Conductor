@@ -144,10 +144,8 @@ export const WhyChooseUs = () => {
 
         {/* Trusted By Section */}
         <div className="mt-20">
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 text-foreground drop-shadow-sm tracking-tight">
-            Trusted by <span className="text-primary">Leading Organizations</span>
-          </h3>
-          <p className="text-lg md:text-xl text-center text-muted-foreground mb-8 max-w-4xl mx-auto">We're proud to serve government agencies, corporations, and institutions across India</p>
+          <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-3 text-primary drop-shadow-sm tracking-tight">Trusted by Leading Organizations</h3>
+          <p className="text-lg md:text-xl text-center text-muted-foreground mb-8 max-w-2xl mx-auto">We're proud to serve government agencies, corporations, and institutions across India...</p>
           <div className="relative overflow-hidden">
             <div
               ref={clientsMarqueeRef}
