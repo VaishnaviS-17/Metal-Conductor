@@ -153,10 +153,17 @@ export const Support = () => {
                 <Phone className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                 Call Now
               </Button>
-              <Button variant="cta" size="lg" className="group">
-                <MessageCircle className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                Live Chat
-              </Button>
+              <a 
+                href="https://wa.link/p7bake" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex"
+              >
+                <Button variant="cta" size="lg" className="group">
+                  <MessageCircle className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                  Live Chat
+                </Button>
+              </a>
             </div>
           </div>
         </div>
