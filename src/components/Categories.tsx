@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Search, Building, Home, Users, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,8 +29,8 @@ const categories = [
   },
   {
     id: 3,
-    name: "Multi Zone Systems",
-    description: "Advanced detection systems with multiple zones",
+    name: "Pole Metal Detectors",
+    description: "Advanced detection systems for police and security",
     icon: Shield,
     productCount: 6,
     color: "from-accent to-primary",
@@ -59,6 +60,7 @@ export const Categories = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -153,7 +155,19 @@ export const Categories = () => {
                     {category.description}
                   </p>
                   
-                  <Button variant="ghost" className="group/btn p-0 h-auto">
+                  <Button 
+                    variant="ghost" 
+                    className="group/btn p-0 h-auto"
+                    onClick={() => {
+                      if (category.name === "Hand Held Detectors") {
+                        navigate('/handheld-detectors');
+                      } else if (category.name === "Door Frame Detectors") {
+                        navigate('/doorframe-detectors');
+                      } else if (category.name === "Pole Metal Detectors") {
+                        navigate('/pole-metal-detectors');
+                      }
+                    }}
+                  >
                     <span className="font-semibold">Shop Category</span>
                     <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>

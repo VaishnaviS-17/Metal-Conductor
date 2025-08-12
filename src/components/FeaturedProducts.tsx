@@ -470,10 +470,10 @@ export const FeaturedProducts = () => {
             {products.slice(0, 3).map((product, index) => (
               <Card 
                 key={product.id} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -491,8 +491,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -516,7 +516,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
@@ -619,10 +619,10 @@ export const FeaturedProducts = () => {
             {products.slice(3, 6).map((product, index) => (
               <Card 
                 key={product.id} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -640,8 +640,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -665,7 +665,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
@@ -768,10 +768,10 @@ export const FeaturedProducts = () => {
             {products.slice(6).map((product, index) => (
               <Card 
                 key={product.id} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -789,8 +789,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -814,7 +814,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
@@ -918,10 +918,10 @@ export const FeaturedProducts = () => {
             {products.slice(0, 3).map((product, index) => (
               <Card 
                 key={`duplicate-${product.id}`} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -939,8 +939,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -964,7 +964,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
@@ -1067,10 +1067,10 @@ export const FeaturedProducts = () => {
             {products.slice(3, 6).map((product, index) => (
               <Card 
                 key={`duplicate-2-${product.id}`} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -1088,8 +1088,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -1113,7 +1113,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
@@ -1216,10 +1216,10 @@ export const FeaturedProducts = () => {
             {products.slice(6).map((product, index) => (
               <Card 
                 key={`duplicate-3-${product.id}`} 
-                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 min-h-[600px]"
+                className="group bg-card border-0 shadow-soft hover:shadow-strong transition-all duration-500 overflow-hidden relative hover:scale-105 flex-shrink-0 w-96 flex flex-col"
               >
                 {/* Product Image */}
-                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-card to-rich-brown overflow-hidden flex-shrink-0">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -1237,8 +1237,8 @@ export const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
-                  <div className="space-y-4">
+                <CardContent className="p-8 flex flex-col flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {product.name}
@@ -1262,7 +1262,7 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="outline" className="flex-1 group/btn h-12">
