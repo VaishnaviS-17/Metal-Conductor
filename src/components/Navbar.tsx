@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, ShoppingCart, Search, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link, useLocation } from 'react-router-dom';
+import { EnquiryForm } from '@/components/EnquiryForm';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +24,6 @@ export const Navbar = () => {
     { href: '#products', label: 'Products' },
     { href: '#categories', label: 'Categories' },
     { href: '/about', label: 'About Us' },
-    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -82,6 +82,11 @@ export const Navbar = () => {
               </span>
             </Button>
 
+            {/* Enquiry Form Button */}
+            <div className="hidden lg:block">
+              <EnquiryForm />
+            </div>
+
 
 
             {/* Mobile Menu Button */}
@@ -121,6 +126,11 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Enquiry Form Button */}
+              <div className="pt-4">
+                <EnquiryForm />
+              </div>
 
             </div>
           </div>
