@@ -9,9 +9,9 @@ export const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-10 md:py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <img 
@@ -21,8 +21,8 @@ export const Footer = () => {
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl lg:text-2xl font-bold text-secondary-foreground">DETECTOR HOUSE</h1>
-              </div>
+                  <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-secondary-foreground">DETECTOR HOUSE</h1>
+                </div>
             </div>
             <p className="text-secondary-foreground/80 leading-relaxed">
               Your trusted shield against uncertainty. Professional metal detection equipment for security and peace of mind.
@@ -47,7 +47,7 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-secondary-foreground">Quick Links</h3>
             <ul className="space-y-3">
               <li><a href="#home" className="text-secondary-foreground/80 hover:text-primary transition-colors">Home</a></li>
@@ -59,7 +59,7 @@ export const Footer = () => {
           </div>
 
           {/* Product Categories */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-secondary-foreground">Categories</h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Hand Held Detectors</a></li>
@@ -71,7 +71,7 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info & Newsletter */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-secondary-foreground">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -90,7 +90,7 @@ export const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <h4 className="font-semibold text-secondary-foreground">Stay Updated</h4>
               <div className="flex gap-2">
                 <Input 
@@ -106,8 +106,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-secondary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="py-4 md:py-6 border-t border-secondary-foreground/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
             <div className="text-secondary-foreground/60 text-sm">
               © {currentYear} Detector House. All rights reserved.
             </div>

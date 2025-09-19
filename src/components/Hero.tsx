@@ -74,20 +74,22 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden hero-gradient">
+    // Add top padding so hero content doesn't sit under the fixed navbar on small screens
+  <section id="home" ref={heroRef} className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 min-h-[70vh] md:min-h-screen flex items-center overflow-hidden hero-gradient">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-8">
+          <div className="text-center lg:text-left space-y-6">
             <div className="space-y-6">
               <h1 
                 ref={titleRef}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+                style={{ wordBreak: 'break-word' }}
               >
                 <TextType 
                   text={["Your Shield Against Uncertainty", "Precision Detection Systems", "Ultimate Peace of Mind"]}
@@ -101,18 +103,18 @@ export const Hero = () => {
               </h1>
               <p 
                 ref={subtitleRef}
-                className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0"
               >
                 Professional metal detectors, security scanners, and detection equipment for ultimate peace of mind.
               </p>
             </div>
 
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="accent" size="xl" className="group">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <Button variant="accent" size="xl" className="group w-full sm:w-auto">
                 <Shield className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                 Shop Now
               </Button>
-              <Button variant="trust" size="xl">
+              <Button variant="trust" size="xl" className="w-full sm:w-auto">
                 Learn More
               </Button>
             </div>
@@ -151,7 +153,8 @@ export const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div ref={imageRef} className="relative">
+          {/* Hide large hero image on very small screens to prioritize content and avoid collision */}
+          <div ref={imageRef} className="relative mt-6 md:mt-0 hidden xs:block sm:block md:block lg:block">
             <div className="relative rounded-2xl overflow-hidden shadow-strong">
               <img 
                 src={heroImage}
@@ -162,7 +165,7 @@ export const Hero = () => {
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-deep-orange to-teal text-white px-6 py-3 rounded-full shadow-glow animate-float">
+            <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-gradient-to-r from-deep-orange to-teal text-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-glow animate-float">
               <div className="text-center">
                 <div className="font-bold text-lg">Trusted</div>
                 <div className="text-sm opacity-90">Since 2008</div>

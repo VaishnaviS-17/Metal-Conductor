@@ -5,7 +5,6 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
@@ -22,7 +21,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Phone, Mail, User, MapPin, MessageSquare, Package, Calendar } from 'lucide-react';
+import { User, MessageSquare, Package } from 'lucide-react';
 
 // Form validation schema
 const enquiryFormSchema = z.object({
@@ -63,21 +62,69 @@ export const EnquiryForm = () => {
   const onSubmit = async (data: EnquiryFormData) => {
     setIsSubmitting(true);
     try {
-      // Here you would typically send the data to your backend
-      console.log('Enquiry form data:', data);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success message
-      alert('Thank you for your enquiry! We will get back to you soon.');
-      
-      // Reset form and close dialog
+      // Prepare WhatsApp message using the company owner's number (from Support.tsx)
+      // Assumption: using the first number listed in Support: +91 98331 37158
+      const ownerPhone = '919372904186'; // international format without '+'
+
+      // Friendly labels for select values
+      const enquiryTypeLabelMap: Record<string, string> = {
+        product: 'Product Information',
+        service: 'Service Request',
+        quote: 'Price Quote',
+        support: 'Technical Support',
+        other: 'Other',
+      };
+
+      const budgetLabelMap: Record<string, string> = {
+        'under-1000': 'Under $1,000',
+        '1000-5000': '$1,000 - $5,000',
+        '5000-10000': '$5,000 - $10,000',
+        '10000-50000': '$10,000 - $50,000',
+        'above-50000': 'Above $50,000',
+        'not-specified': 'Not Specified',
+      };
+
+      const timelineLabelMap: Record<string, string> = {
+        immediate: 'Immediate',
+        '1-month': 'Within 1 Month',
+        '3-months': 'Within 3 Months',
+        '6-months': 'Within 6 Months',
+        flexible: 'Flexible',
+      };
+
+      const lines = [
+        'New Enquiry from website:',
+        `Name: ${data.fullName}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone}`,
+        `Company: ${data.company || 'N/A'}`,
+        `Location: ${data.location}`,
+        `Enquiry Type: ${enquiryTypeLabelMap[data.enquiryType] || data.enquiryType}`,
+        `Product Interest: ${data.productInterest || 'N/A'}`,
+        `Budget: ${budgetLabelMap[data.budget] || data.budget}`,
+        `Timeline: ${timelineLabelMap[data.timeline] || data.timeline}`,
+        `Message: ${data.message}`,
+      ];
+
+      const message = encodeURIComponent(lines.join('\n'));
+
+      // Use wa.me link to open chat with prefilled message
+      const waUrl = `https://wa.me/${ownerPhone}?text=${message}`;
+
+      // Try to open in a new tab/window. If blocked, provide fallback to navigate.
+      const newWindow = window.open(waUrl, '_blank');
+      if (!newWindow) {
+        // Popup blocked — navigate the current tab as fallback
+        window.location.href = waUrl;
+      }
+
+      // Provide user feedback and reset form
+      alert('Your enquiry has been prepared. WhatsApp should open in a new tab to send it to the owner.');
       form.reset();
       setIsOpen(false);
     } catch (error) {
-      console.error('Error submitting enquiry:', error);
-      alert('There was an error submitting your enquiry. Please try again.');
+      console.error('Error preparing WhatsApp message:', error);
+      alert('There was an error opening WhatsApp. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -91,7 +138,7 @@ export const EnquiryForm = () => {
           Contact Us
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+  <DialogContent className="max-w-2xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto px-4 sm:px-6">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
             <Package className="w-6 h-6 inline mr-2" />
@@ -312,7 +359,7 @@ export const EnquiryForm = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-end space-x-4 pt-4">
+            <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4 pt-4">
               <Button
                 type="button"
                 variant="outline"
