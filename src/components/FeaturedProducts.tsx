@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Star, Eye, Shield, Zap, Settings, Users, Award, ArrowRight, CheckCircle, Info } from 'lucide-react';
+import { Eye, Zap, Settings, Users, CheckCircle } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { cn } from '@/lib/utils';
+//
+import { products } from '@/data/products';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* Kept for reference if needed; data moved to shared file
 const products = [
   {
     id: 1,
@@ -368,12 +370,13 @@ const products = [
     ]
   }
 ];
+*/
 
 export const FeaturedProducts = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  //
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -393,26 +396,7 @@ export const FeaturedProducts = () => {
         }
       );
 
-      // Initial cards animation - fade in from bottom
-      /*gsap.fromTo(cardsRef.current?.children,
-        { 
-          opacity: 0, 
-          y: 80, 
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 75%",
-          }
-        }
-      );*/
+      // Removed vertical entrance animation to keep only horizontal motion
 
       // Carousel animation - automatic horizontal sliding
       const productGroups = cardsRef.current?.children;
@@ -437,15 +421,7 @@ export const FeaturedProducts = () => {
         });
       }
 
-      // Subtle floating animation for visual appeal
-      gsap.to(cardsRef.current?.children, {
-        y: -8,
-        duration: 1,
-        ease: "power1.inOut",
-        yoyo: true,
-        repeat: -1,
-        stagger: 0.3
-      });
+      // Removed vertical floating animation per request; keep only horizontal sliding
 
     }, sectionRef);
 
@@ -506,16 +482,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -576,8 +546,8 @@ export const FeaturedProducts = () => {
                                 Key Features
                               </h3>
                               <div className="grid grid-cols-1 gap-1">
-                                {product.features.map((feature, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm">
+                                {product.features.map((feature) => (
+                                  <div key={feature} className="flex items-center gap-2 text-sm">
                                     <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                                     <span className="text-muted-foreground">{feature}</span>
                                   </div>
@@ -604,10 +574,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -655,16 +622,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -741,8 +702,8 @@ export const FeaturedProducts = () => {
                                 Applications
                               </h3>
                               <div className="flex flex-wrap gap-2">
-                                {product.applications.map((app, idx) => (
-                                  <Badge key={idx} variant="secondary" className="bg-accent text-accent-foreground text-xs">
+                                {product.applications.map((app) => (
+                                  <Badge key={app} variant="secondary" className="bg-accent text-accent-foreground text-xs">
                                     {app}
                                   </Badge>
                                 ))}
@@ -753,10 +714,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -804,16 +762,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -902,10 +854,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -954,16 +903,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -1052,10 +995,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -1103,16 +1043,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -1201,10 +1135,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -1252,16 +1183,10 @@ export const FeaturedProducts = () => {
                       {product.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 3).map((feature, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
+                    {/* Removed highlighted feature chips above the View Details button */}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-4 mt-auto">
                     <Dialog>
                       <DialogTrigger asChild>
@@ -1350,10 +1275,7 @@ export const FeaturedProducts = () => {
                       </DialogContent>
                     </Dialog>
 
-                    <Button variant="accent" className="flex-1 group/btn h-12">
-                      <Info className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Shop Now
-                    </Button>
+                    {/* Removed Shop Now button */}
                   </div>
                 </CardContent>
               </Card>
@@ -1361,12 +1283,7 @@ export const FeaturedProducts = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <Button variant="accent" size="lg" className="group">
-            <span>Explore All Products</span>
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        {/* Removed Explore All Products CTA */}
       </div>
     </section>
   );

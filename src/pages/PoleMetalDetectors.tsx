@@ -386,7 +386,7 @@ const PoleMetalDetectors = () => {
 
                       <Button variant="accent" className="flex-1 group/btn h-12">
                         <ShoppingCart className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        Shop Now
+                        View Details
                       </Button>
                     </div>
                   </div>

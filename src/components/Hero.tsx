@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import heroImage from '@/assets/hero-detector.jpg';
 import TextType from '@/components/ui/text-type';
+import { Link } from 'react-router-dom';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -110,13 +111,11 @@ export const Hero = () => {
             </div>
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <Button variant="accent" size="xl" className="group w-full sm:w-auto">
-                <Shield className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                Shop Now
-              </Button>
-              <Button variant="trust" size="xl" className="w-full sm:w-auto">
-                Learn More
-              </Button>
+              <Link to="/about" className="w-full sm:w-auto">
+                <Button variant="trust" size="xl" className="w-full sm:w-auto">
+                  Learn More
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}

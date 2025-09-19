@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Shield, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+//
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -62,15 +62,15 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-secondary-foreground">Categories</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Hand Held Detectors</a></li>
-              <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Door Frame Systems</a></li>
-              <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Multi Zone Detectors</a></li>
-              <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Security Solutions</a></li>
-              <li><a href="#" className="text-secondary-foreground/80 hover:text-primary transition-colors">Portable Systems</a></li>
+              <li><span className="text-secondary-foreground/80">Hand Held Detectors</span></li>
+              <li><span className="text-secondary-foreground/80">Door Frame Systems</span></li>
+              <li><span className="text-secondary-foreground/80">Multi Zone Detectors</span></li>
+              <li><span className="text-secondary-foreground/80">Security Solutions</span></li>
+              <li><span className="text-secondary-foreground/80">Portable Systems</span></li>
             </ul>
           </div>
 
-          {/* Contact Info & Newsletter */}
+          {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-secondary-foreground">Contact Info</h3>
             <div className="space-y-4">
@@ -86,21 +86,6 @@ export const Footer = () => {
                 <MapPin className="w-5 h-5 text-primary mt-1" />
                 <span className="text-secondary-foreground/80">Charkop, Kandivali West, Mumbai, Maharashtra, India</span>
               </div>
-              
-            </div>
-
-            {/* Newsletter */}
-            <div className="space-y-2">
-              <h4 className="font-semibold text-secondary-foreground">Stay Updated</h4>
-              <div className="flex gap-2">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/60"
-                />
-                <Button variant="cta" size="sm">
-                  Subscribe
-                </Button>
-              </div>
             </div>
           </div>
         </div>
@@ -112,9 +97,9 @@ export const Footer = () => {
               © {currentYear} Detector House. All rights reserved.
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">Shipping Info</a>
+              <span className="text-secondary-foreground/60">Privacy Policy</span>
+              <span className="text-secondary-foreground/60">Terms of Service</span>
+              <span className="text-secondary-foreground/60">Shipping Info</span>
             </div>
           </div>
         </div>

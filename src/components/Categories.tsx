@@ -112,39 +112,24 @@ export const Categories = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {categories.map((category, index) => {
+        {/* First row: 3 cards */}
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 mb-12">
+          {categories.slice(0,3).map((category, index) => {
             const IconComponent = category.icon;
             return (
               <Card 
                 key={category.id} 
-                className={`group hover-lift border-0 shadow-soft hover:shadow-strong bg-card overflow-hidden relative ${
-                  index === 0 ? 'lg:col-span-2' : ''
-                }`}
+                className={`group hover-lift border border-white/10 shadow-soft hover:shadow-strong bg-card/90 backdrop-blur-sm overflow-hidden relative rounded-2xl`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-white">
                   <img 
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-contain"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${
-                    index === 0 ? 'from-deep-orange to-teal' :
-                    index === 1 ? 'from-secondary to-secondary-hover' :
-                    index === 2 ? 'from-primary to-accent' :
-                    index === 3 ? 'from-teal to-deep-orange' :
-                    'from-primary to-secondary'
-                  } opacity-80 group-hover:opacity-70 transition-opacity duration-300`}></div>
                   
-                  <div className="absolute top-4 left-4">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-4 right-4 bg-white text-secondary px-3 py-1 rounded-full text-sm font-semibold">
-                    {category.productCount} Products
-                  </div>
+                  
+                  
                 </div>
                 
                 <CardContent className="p-6">
@@ -175,6 +160,58 @@ export const Categories = () => {
               </Card>
             );
           })}
+        </div>
+
+        {/* Second row: 2 cards centered */}
+        <div className="w-full flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            {categories.slice(3,5).map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <Card 
+                  key={category.id} 
+                  className={`group hover-lift border border-white/10 shadow-soft hover:shadow-strong bg-card/90 backdrop-blur-sm overflow-hidden relative rounded-2xl`}
+                >
+                  <div className="relative h-48 overflow-hidden bg-white">
+                    <img 
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-contain"
+                    />
+                    
+                    
+                    
+                  </div>
+                  
+                  <CardContent className="p-6">
+                    <h3 className="font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {category.name}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {category.description}
+                    </p>
+                    
+                    <Button 
+                      variant="ghost" 
+                      className="group/btn p-0 h-auto"
+                      onClick={() => {
+                        if (category.name === "Hand Held Detectors") {
+                          navigate('/handheld-detectors');
+                        } else if (category.name === "Door Frame Detectors") {
+                          navigate('/doorframe-detectors');
+                        } else if (category.name === "Pole Metal Detectors") {
+                          navigate('/pole-metal-detectors');
+                        }
+                      }}
+                    >
+                      <span className="font-semibold">Shop Category</span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
 
         <div className="text-center">
